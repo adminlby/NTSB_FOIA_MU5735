@@ -1,0 +1,34 @@
+site_name: NTSB FOIA MU5735
+site_description: Archive and unofficial Chinese translation of NTSB FOIA materials related to MU5735.
+site_url: https://adminlby.github.io/NTSB_FOIA_MU5735/
+repo_url: https://github.com/adminlby/NTSB_FOIA_MU5735
+repo_name: adminlby/NTSB_FOIA_MU5735
+
+docs_dir: MU5735_NTSB_Recorder_Report_CN
+
+theme:
+  name: material
+  language: zh
+  features:
+    - navigation.instant
+    - navigation.sections
+    - navigation.top
+    - search.highlight
+    - search.suggest
+
+plugins:
+  - search:
+      lang:
+        - en
+        - zh
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+nav:
+  - 首页: index.md
+  - 中文译文: MU5735_NTSB_Recorder_Report_Chinese.md
