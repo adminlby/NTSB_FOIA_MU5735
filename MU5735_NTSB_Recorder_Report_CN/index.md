@@ -7,6 +7,10 @@
 - [NTSB 记录器报告中文译文](MU5735_NTSB_Recorder_Report_Chinese.md)
 - [NTSB 公开发布资料](ntsb-release.md)
 - [事故时间线与数据局限](timeline-data-limits.md)
+- [飞行数据可视化](flight-data-visualization.md)
+  - [TableResolution FDR 记录](fdr/tableresolution.md)
+- [现场图片](site-photos.md)
+- [电子邮件记录](email-records.md)
 - [Issue #9 操纵输入讨论汇总](issue-9-control-inputs.md)
 - [第三方可视化项目](third-party-visualizations.md)
 - 原始 PDF、CSV 与其他档案文件保留在 GitHub 仓库中

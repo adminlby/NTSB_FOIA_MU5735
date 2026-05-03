@@ -1,0 +1,240 @@
+.fdr-notice {
+  border: 1px solid #d7dde8;
+  border-left: 4px solid #d99000;
+  border-radius: 6px;
+  padding: 1rem 1.1rem;
+  margin: 1rem 0 1.5rem;
+  background: #fffaf0;
+  color: #2f3440;
+}
+
+.fdr-notice h2 {
+  margin-top: 0;
+  font-size: 1.15rem;
+}
+
+.fdr-notice h3 {
+  margin-bottom: .2rem;
+  font-size: .95rem;
+}
+
+.fdr-notice p {
+  margin: .45rem 0;
+  line-height: 1.65;
+}
+
+.fdr-app {
+  display: grid;
+  grid-template-columns: minmax(250px, 320px) minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+  margin: 1.5rem 0;
+}
+
+.fdr-sidebar,
+.fdr-main {
+  border: 1px solid #dce1ea;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.fdr-sidebar {
+  position: sticky;
+  top: 4.6rem;
+  max-height: calc(100vh - 5rem);
+  overflow: hidden;
+}
+
+.fdr-search {
+  width: calc(100% - 1rem);
+  margin: .5rem;
+  padding: .55rem .7rem;
+  border: 1px solid #ccd3df;
+  border-radius: 6px;
+  font: inherit;
+}
+
+.fdr-selection-bar,
+.fdr-toolbar {
+  display: flex;
+  justify-content: space-between;
+  gap: .75rem;
+  align-items: center;
+  border-bottom: 1px solid #e5e9f0;
+  padding: .55rem .75rem;
+  color: #667085;
+}
+
+.fdr-selection-bar button,
+.fdr-toolbar button,
+.fdr-toolbar a {
+  border: 0;
+  background: transparent;
+  color: #5b6472;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+}
+
+.fdr-selection-bar button:hover,
+.fdr-toolbar button:hover,
+.fdr-toolbar a:hover {
+  color: #0f5f96;
+}
+
+.fdr-groups {
+  max-height: calc(100vh - 10rem);
+  overflow: auto;
+}
+
+.fdr-group {
+  border-bottom: 1px solid #edf0f5;
+}
+
+.fdr-group summary {
+  display: grid;
+  grid-template-columns: 1rem 1fr auto;
+  gap: .45rem;
+  align-items: center;
+  padding: .65rem .75rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.fdr-group summary::-webkit-details-marker {
+  display: none;
+}
+
+.fdr-caret {
+  color: #99a1ad;
+  font-size: .75rem;
+}
+
+.fdr-group[open] .fdr-caret {
+  transform: rotate(90deg);
+}
+
+.fdr-group-name {
+  color: #202735;
+}
+
+.fdr-group-name span {
+  color: #98a0ad;
+}
+
+.fdr-group-count {
+  color: #8f97a4;
+}
+
+.fdr-signal-list {
+  padding: 0 .5rem .55rem 2rem;
+}
+
+.fdr-signal {
+  display: grid;
+  grid-template-columns: 1.1rem minmax(0, 1fr);
+  gap: .45rem;
+  align-items: start;
+  padding: .28rem 0;
+  font-size: .78rem;
+  color: #344054;
+}
+
+.fdr-signal input {
+  margin-top: .15rem;
+}
+
+.fdr-signal small {
+  display: block;
+  color: #98a0ad;
+  font-size: .7rem;
+}
+
+.fdr-main {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.fdr-toolbar {
+  background: #f8fafc;
+}
+
+.fdr-actions {
+  display: flex;
+  gap: .85rem;
+  white-space: nowrap;
+}
+
+.fdr-charts {
+  padding: .75rem;
+}
+
+.fdr-empty {
+  padding: 2rem;
+  text-align: center;
+  color: #7b8492;
+}
+
+.fdr-chart {
+  border: 1px solid #e4e8ef;
+  border-radius: 8px;
+  margin-bottom: .8rem;
+  overflow: hidden;
+  background: #fff;
+}
+
+.fdr-chart-header {
+  display: flex;
+  justify-content: space-between;
+  gap: .75rem;
+  padding: .55rem .7rem;
+  border-bottom: 1px solid #edf0f5;
+  background: #fbfcfe;
+}
+
+.fdr-chart-title {
+  font-weight: 600;
+  color: #202735;
+}
+
+.fdr-chart-meta {
+  color: #7b8492;
+  font-size: .75rem;
+  white-space: nowrap;
+}
+
+.fdr-chart canvas {
+  width: 100%;
+  height: 220px;
+  display: block;
+  cursor: crosshair;
+}
+
+.fdr-source-note {
+  margin: 1.25rem 0 0;
+  padding: .85rem 0;
+  border-top: 1px solid #e4e8ef;
+  color: #667085;
+  font-size: .82rem;
+}
+
+.fdr-source-note a {
+  color: #0f5f96;
+}
+
+@media (max-width: 900px) {
+  .fdr-app {
+    grid-template-columns: 1fr;
+  }
+
+  .fdr-sidebar {
+    position: static;
+    max-height: 55vh;
+  }
+
+  .fdr-toolbar,
+  .fdr-chart-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
