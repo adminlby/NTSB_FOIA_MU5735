@@ -1,4 +1,5 @@
 (function () {
+  const scriptUrl = document.currentScript?.src || new URL("../../assets/js/fdr-tableresolution.js", document.baseURI).href;
   const GROUPS = [
     ["air", "气动 / 高度", "Air data", ["Air Gnd On Gnd", "AIR GROUND - SMYDC-2", "Air-Ground", "Airspeed Comp", "Airspeed Max Allowable", "Airspeed Target FCC", "Alt 1 Baro Corr", "Alt 2 Baro Corr", "Alt 3 Baro Corr", "Alt 4 Baro Corr", "Alt Baro Corr Combine", "Altitude Press", "Altitude Radio DEU", "Altitude Radio-1", "Altitude Radio-2", "FMC Selected Airspeed", "FMC Selected Altitude", "FMC Selected Mach", "Ground Spd", "Groundspeed  FMC", "Groundspeed Disp -L", "Heading", "Heading Selected FCC", "High Speed Buffet Speed", "Selected Airspeed FCC"]],
     ["inertial", "惯性 / 姿态", "Inertial / attitude", ["Absolute Roll Rate", "Accel Lat", "Accel Long", "Accel Vert", "Drift Angle -FMC", "Pitch Angle", "Roll Angle", "Roll Rate", "Track Angle True FMC", "Wind Direction True -FMC", "Wind Speed -FMC", "Yaw Rate", "Selected Course Foreign FCC", "Selected Course Local FCC", "Selected Vertical Speed FCC"]],
@@ -13,6 +14,7 @@
   const COLORS = ["#1565c0", "#c62828", "#2e7d32", "#6a1b9a", "#ef6c00", "#00838f"];
   const app = document.getElementById("fdr-app");
   if (!app) return;
+  document.body.classList.add("fdr-fullscreen-page");
 
   const state = {
     headers: [],
@@ -32,10 +34,16 @@
     groups: document.getElementById("fdr-groups"),
     status: document.getElementById("fdr-status"),
     charts: document.getElementById("fdr-charts"),
-    resetZoom: document.getElementById("fdr-reset-zoom")
+    resetZoom: document.getElementById("fdr-reset-zoom"),
+    download: document.getElementById("fdr-download"),
+    home: document.querySelector("[data-fdr-home]")
   };
 
-  fetch(app.dataset.csv)
+  const csvUrl = resolveAssetUrl(app.dataset.csv || "../data/TableResolution.csv");
+  if (els.download) els.download.href = csvUrl;
+  if (els.home) els.home.href = resolveAssetUrl("../../");
+
+  fetch(csvUrl)
     .then((response) => {
       if (!response.ok) throw new Error("CSV request failed: " + response.status);
       return response.text();
@@ -49,9 +57,13 @@
   function loadCsv(text) {
     const parsed = parseCsv(text);
     const dataIndex = parsed.findIndex((row) => row[0] === "DATA");
+    if (dataIndex < 0) throw new Error("CSV missing DATA section");
     state.headers = parsed[dataIndex + 1];
     state.units = parsed[dataIndex + 2];
     state.types = parsed[dataIndex + 3];
+    if (!state.headers?.length || !state.units?.length || !state.types?.length) {
+      throw new Error("CSV header section is incomplete");
+    }
     state.rows = parsed.slice(dataIndex + 4).filter((row) => row.length > 1);
     state.signals = state.headers.slice(1).map((name, offset) => {
       const index = offset + 1;
@@ -151,6 +163,7 @@
       const list = details.querySelector(".fdr-signal-list");
       visibleNames.forEach((name) => {
         const signal = state.signals.find((item) => item.name === name);
+        if (!signal) return;
         const label = document.createElement("label");
         label.className = "fdr-signal";
         label.innerHTML = `
@@ -388,6 +401,14 @@
 
   function escapeAttr(value) {
     return escapeHtml(value);
+  }
+
+  function resolveAssetUrl(path) {
+    try {
+      return new URL(path, scriptUrl).href;
+    } catch {
+      return path;
+    }
   }
 
   els.search.addEventListener("input", renderSelector);
