@@ -74,7 +74,8 @@
         unit: cleanUnit(state.units[index]),
         type: state.types[index] || "",
         kind: inferKind(state.types[index], values),
-        labels: inferLabels(state.types[index], values)
+        labels: inferLabels(state.types[index], values),
+        sampleInterval: inferSampleInterval(index)
       };
     });
     const start = Number(state.rows[0][0]);
@@ -225,8 +226,8 @@
     ctx.strokeStyle = color;
     ctx.lineWidth = 1.5;
     signal.kind === "number"
-      ? drawContinuous(ctx, points, pad, plotW, plotH, xMin, xMax, yInfo)
-      : drawDiscrete(ctx, points, pad, plotW, plotH, xMin, xMax, yInfo);
+      ? drawContinuous(ctx, points, signal, pad, plotW, plotH, xMin, xMax, yInfo)
+      : drawDiscrete(ctx, points, signal, pad, plotW, plotH, xMin, xMax, yInfo);
 
     canvas.onpointerdown = (event) => {
       state.drag = { canvas, startX: event.offsetX, endX: event.offsetX };
@@ -343,11 +344,11 @@
     ctx.restore();
   }
 
-  function drawContinuous(ctx, points, pad, plotW, plotH, xMin, xMax, yInfo) {
+  function drawContinuous(ctx, points, signal, pad, plotW, plotH, xMin, xMax, yInfo) {
     for (let i = 1; i < points.length; i += 1) {
       const prev = points[i - 1];
       const cur = points[i];
-      if (cur.rowIndex !== prev.rowIndex + 1) continue;
+      if (!sameSampleRun(prev, cur, signal)) continue;
       ctx.beginPath();
       ctx.moveTo(xPos(prev.time, pad, plotW, xMin, xMax), yPos(prev.y, pad, plotH, yInfo));
       ctx.lineTo(xPos(cur.time, pad, plotW, xMin, xMax), yPos(cur.y, pad, plotH, yInfo));
@@ -355,11 +356,11 @@
     }
   }
 
-  function drawDiscrete(ctx, points, pad, plotW, plotH, xMin, xMax, yInfo) {
+  function drawDiscrete(ctx, points, signal, pad, plotW, plotH, xMin, xMax, yInfo) {
     for (let i = 1; i < points.length; i += 1) {
       const prev = points[i - 1];
       const cur = points[i];
-      if (cur.rowIndex !== prev.rowIndex + 1) continue;
+      if (!sameSampleRun(prev, cur, signal)) continue;
       const x1 = xPos(prev.time, pad, plotW, xMin, xMax);
       const x2 = xPos(cur.time, pad, plotW, xMin, xMax);
       const y1 = yPos(prev.y, pad, plotH, yInfo);
@@ -378,6 +379,31 @@
 
   function yPos(value, pad, plotH, yInfo) {
     return pad.top + plotH - ((value - yInfo.min) / (yInfo.max - yInfo.min)) * plotH;
+  }
+
+  function inferSampleInterval(index) {
+    const diffs = [];
+    let previousTime = null;
+    for (const row of state.rows) {
+      const raw = row[index] || "";
+      if (!raw) continue;
+      const time = Number(row[0]);
+      if (!Number.isFinite(time)) continue;
+      if (previousTime !== null) {
+        const diff = time - previousTime;
+        if (diff > 0) diffs.push(diff);
+      }
+      previousTime = time;
+    }
+    if (!diffs.length) return 0;
+    diffs.sort((a, b) => a - b);
+    return diffs[Math.floor(diffs.length / 2)];
+  }
+
+  function sameSampleRun(prev, cur, signal) {
+    if (!signal.sampleInterval) return cur.rowIndex === prev.rowIndex + 1;
+    const tolerance = Math.max(signal.sampleInterval * 1.6, signal.sampleInterval + 1e-6);
+    return cur.time - prev.time <= tolerance;
   }
 
   function drawSelection(ctx, x1, x2, height, pad) {
