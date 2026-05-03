@@ -2,6 +2,10 @@
 
 <link rel="stylesheet" href="../../assets/styles/fdr-tableresolution.css">
 
+<nav class="fdr-page-actions" aria-label="页面导航">
+  <a class="fdr-home-button" data-fdr-home href="../../">返回主页</a>
+</nav>
+
 <section class="fdr-notice" aria-labelledby="fdr-notice-title">
   <h2 id="fdr-notice-title">⚠ 数据与显示说明 · Data &amp; display notice</h2>
 
@@ -22,7 +26,7 @@
   <p><strong>Do not rely on this view alone.</strong> This page is purely a visualization of the original CSV and does not constitute any conclusion, finding, or opinion. Do not infer cause, fault, liability, or fact from this view alone. For formal analysis, reproduction, or citation, treat the original CSV file as the sole authoritative source.</p>
 </section>
 
-<section id="fdr-app" class="fdr-app" data-csv="../../assets/data/TableResolution.csv">
+<section id="fdr-app" class="fdr-app" data-csv="../data/TableResolution.csv">
   <aside class="fdr-sidebar" aria-label="FDR signal selector">
     <input id="fdr-search" class="fdr-search" type="search" placeholder="搜索信号名 / Search signals..." autocomplete="off">
     <div class="fdr-selection-bar">
@@ -39,7 +43,7 @@
       </div>
       <div class="fdr-actions">
         <button id="fdr-reset-zoom" type="button">Reset zoom</button>
-        <a href="../../assets/data/TableResolution.csv" download>Download CSV</a>
+        <a id="fdr-download" href="../../assets/data/TableResolution.csv" download>Download CSV</a>
       </div>
     </div>
     <div id="fdr-charts" class="fdr-charts" aria-live="polite"></div>

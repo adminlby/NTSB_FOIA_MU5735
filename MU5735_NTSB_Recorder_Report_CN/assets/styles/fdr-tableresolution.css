@@ -1,3 +1,54 @@
+body.fdr-fullscreen-page .md-sidebar {
+  display: none;
+}
+
+body.fdr-fullscreen-page .md-main__inner,
+body.fdr-fullscreen-page .md-content,
+body.fdr-fullscreen-page .md-content__inner {
+  max-width: none;
+}
+
+body.fdr-fullscreen-page .md-content {
+  margin: 0;
+}
+
+body.fdr-fullscreen-page .md-content__inner {
+  margin: 0 auto;
+  padding: 1.2rem 1.6rem 2rem;
+}
+
+.fdr-page-actions {
+  position: sticky;
+  top: 3.2rem;
+  z-index: 8;
+  display: flex;
+  justify-content: flex-end;
+  margin: -.35rem 0 .85rem;
+  padding: .35rem 0;
+  background: color-mix(in srgb, var(--md-default-bg-color, #fff) 88%, transparent);
+  backdrop-filter: blur(8px);
+}
+
+.fdr-home-button {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.15rem;
+  padding: .45rem .75rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  background: #fff;
+  color: #334155;
+  font-size: .82rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, .06);
+}
+
+.fdr-home-button:hover {
+  border-color: #8aa1bd;
+  color: #0f5f96;
+}
+
 .fdr-notice {
   border: 1px solid #d7dde8;
   border-left: 4px solid #d99000;
