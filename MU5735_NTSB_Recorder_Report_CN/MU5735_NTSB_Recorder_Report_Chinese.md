@@ -358,5 +358,200 @@ Charles Cates
 - **不可用（Unusable）**：可以辨认出存在机组对话，但无论采用常规还是非常规手段，均无法形成有意义的对话记录文本。这类记录通常由CVR系统几乎完全的机械或电气故障导致。
 
 ## 附录B. 已验证参数（Validated Parameters）
+本附录描述了已验证并提供给中国民航局（CAAC）的参数。
+表 B-1 列出了参数名称、单位以及每个参数的说明。
+此外，表 B-2 描述了本报告中使用的单位和缩写。
 
-> *说明：本节尚未翻译*  
+## 表 B-1：已验证并提供的 FDR 参数
+
+|  序号 | 已验证参数名称                              | 单位    | 中文说明                |
+| --: | ------------------------------------ | ----- | ------------------- |
+|   1 | Absolute Roll Rate                   | deg/s | 飞机横滚角速度             |
+|   2 | Accel Lat                            | g     | 横向加速度               |
+|   3 | Accel Long                           | g     | 纵向加速度               |
+|   4 | Accel Vert                           | g     | 垂直加速度               |
+|   5 | Active Altitude Ref - FCC            |       | FCC 高度基准            |
+|   6 | Aileron Actuator Pos-L               | deg   | 左副翼作动器位置            |
+|   7 | Aileron Quadrant Pos                 | deg   | 副翼控制扇形盘位置           |
+|   8 | Aileron Roll Cmd-L                   | deg   | 左 FCC 副翼横滚指令        |
+|   9 | Aileron-L                            | deg   | 左副翼位置               |
+|  10 | Aileron-R                            | deg   | 右副翼位置               |
+|  11 | Air Gnd On Gnd                       |       | 空地传感器显示在地面          |
+|  12 | AIR GROUND - SMYDC-1                 |       | SMYDC 1 显示在地面       |
+|  13 | AIR GROUND - SMYDC-2                 |       | SMYDC 2 显示在地面       |
+|  14 | Air-Ground                           |       | 空/地状态               |
+|  15 | Airspeed Comp                        | kts   | 计算空速                |
+|  16 | Airspeed Max Allowable               | kts   | FCC 最大允许空速          |
+|  17 | Airspeed Target FCC                  | kts   | FCC 计算空速目标          |
+|  18 | Alt 1 Baro Corr                      | ft    | 气压修正高度 1            |
+|  19 | Alt 2 Baro Corr                      | ft    | 气压修正高度 2            |
+|  20 | Alt 3 Baro Corr                      | ft    | 气压修正高度 3            |
+|  21 | Alt 4 Baro Corr                      | ft    | 气压修正高度 4            |
+|  22 | ALT ACQ Engaged - FCC                |       | 高度获取自动驾驶模式接通        |
+|  23 | Alt Baro Corr Combine                | ft    | 合并气压修正高度            |
+|  24 | ALT HOLD Engaged - FCC               |       | 高度保持自动驾驶模式接通        |
+|  25 | Altitude Press                       | ft    | 压力高度                |
+|  26 | Altitude Radio DEU                   | ft    | 显示无线电高度             |
+|  27 | Altitude Radio-1                     | ft    | 无线电高度表 1            |
+|  28 | Altitude Radio-2                     | ft    | 无线电高度表 2            |
+|  29 | AP Off - FCC                         |       | 自动驾驶断开              |
+|  30 | AP-1 Warn                            |       | 自动驾驶警告 1            |
+|  31 | AP-2 Warn                            |       | 自动驾驶警告 2            |
+|  32 | APU N1                               | %RPM  | APU 轴转速             |
+|  33 | APU On                               |       | APU 运行              |
+|  34 | APU Ready To Load                    |       | APU 可加载             |
+|  35 | AT FMC SPD Engaged                   |       | 自动油门速度模式接通          |
+|  36 | CMD A - FCC                          |       | FCC A 指令控制          |
+|  37 | CMD A Light - FCC                    |       | FCC A 指令灯亮          |
+|  38 | CMD B Light - FCC                    |       | FCC B 指令灯亮          |
+|  39 | Ctrl Col Force Pitch CWS             | lb    | 合并驾驶杆操纵力            |
+|  40 | Ctrl Col Force Pitch CWS Foreign     | lb    | 非指令 FCC 侧驾驶杆力       |
+|  41 | Ctrl Col Force Pitch CWS Local       | lb    | 指令 FCC 侧驾驶杆力        |
+|  42 | Ctrl Col Pos-L                       | deg   | 左驾驶杆位置              |
+|  43 | Ctrl Col Pos-R                       | deg   | 右驾驶杆位置              |
+|  44 | Ctrl Whl Force Roll CWS              | lb    | 驾驶盘操纵力              |
+|  45 | Ctrl Whl Pos-L                       | deg   | 左驾驶盘位置              |
+|  46 | Ctrl Whl Pos-R                       | deg   | 右驾驶盘位置              |
+|  47 | Drift Angle -FMC                     | deg   | 计算偏流角               |
+|  48 | Elevator Actuator Pos-L              | deg   | 左升降舵作动器位置           |
+|  49 | Elevator Pitch Cmd-L                 | deg   | 左 FCC 升降舵俯仰指令       |
+|  50 | Elevator-L                           | deg   | 左升降舵位置              |
+|  51 | Elevator-R                           | deg   | 右升降舵位置              |
+|  52 | Eng1 Cutoff SW                       |       | 左发动机切断开关            |
+|  53 | Eng1 EGT                             | degC  | 左发动机排气温度            |
+|  54 | Eng1 Fire                            |       | 检测到左发动机火警           |
+|  55 | Eng1 FMC N1 Bug Drive                | %RPM  | 左发动机 N1 指示游标驱动      |
+|  56 | Eng1 FMC N1 Target                   | %RPM  | 左发动机 N1 目标值         |
+|  57 | Eng1 FMV Pos                         | %     | 左发动机燃油计量活门位置        |
+|  58 | Eng1 Fuel Flow                       | pph   | 左发动机燃油流量            |
+|  59 | Eng1 N1                              | %RPM  | 左发动机风扇转速            |
+|  60 | Eng1 N1 Cmd                          | %RPM  | 左发动机风扇转速指令          |
+|  61 | Eng1 N1 Ref                          | %RPM  | 左发动机参考风扇转速          |
+|  62 | Eng1 N1 Tach                         | %RPM  | 左发动机风扇转速表值          |
+|  63 | Eng1 N2 Actual                       | %RPM  | 左发动机核心机转速           |
+|  64 | Eng1 N2 Tach                         | %RPM  | 左发动机核心机转速表值         |
+|  65 | Eng1 Oil Press                       | psi   | 左发动机滑油压力            |
+|  66 | Eng1 Oil Qty                         | qt    | 左发动机滑油量             |
+|  67 | Eng1 Oil Temp                        | degC  | 左发动机滑油温度            |
+|  68 | Eng1 TRA                             | deg   | 左发动机油门解析器角度         |
+|  69 | Eng2 Cutoff SW                       |       | 右发动机切断开关            |
+|  70 | Eng2 EGT                             | degC  | 右发动机排气温度            |
+|  71 | Eng2 Fire                            |       | 检测到右发动机火警           |
+|  72 | Eng2 FMC N1 Bug Drive                | %RPM  | 右发动机 N1 指示游标驱动      |
+|  73 | Eng2 FMC N1 Target                   | %RPM  | 右发动机 N1 目标值         |
+|  74 | Eng2 FMV Pos                         | %     | 右发动机燃油计量活门位置        |
+|  75 | Eng2 Fuel Flow                       | pph   | 右发动机燃油流量            |
+|  76 | Eng2 N1                              | %RPM  | 右发动机风扇转速            |
+|  77 | Eng2 N1 Cmd                          | %RPM  | 右发动机风扇转速指令          |
+|  78 | Eng2 N1 Ref                          | %RPM  | 右发动机参考风扇转速          |
+|  79 | Eng2 N1 Tach                         | %RPM  | 右发动机风扇转速表值          |
+|  80 | Eng2 N2 Actual                       | %RPM  | 右发动机核心机转速           |
+|  81 | Eng2 N2 Tach                         | %RPM  | 右发动机核心机转速表值         |
+|  82 | Eng2 Oil Press                       | psi   | 右发动机滑油压力            |
+|  83 | Eng2 Oil Qty                         | qt    | 右发动机滑油量             |
+|  84 | Eng2 Oil Temp                        | degC  | 右发动机滑油温度            |
+|  85 | Eng2 TRA                             | deg   | 右发动机油门解析器角度         |
+|  86 | FAC Engage - FCC                     |       | 最后进近航道自动驾驶模式接通      |
+|  87 | FCC In Command of MACH Trim - R      |       | 右 FCC 指令马赫配平        |
+|  88 | FCC-L In Command of MACH Trim        |       | 左 FCC 指令马赫配平        |
+|  89 | FD-A Switch - FCC                    |       | 飞行指引仪 A 开关          |
+|  90 | FD-B Switch - FCC                    |       | 飞行指引仪 B 开关          |
+|  91 | Flap Handle Pos                      | deg   | 襟翼手柄位置              |
+|  92 | Flap-L                               | deg   | 左襟翼位置               |
+|  93 | Flap-R                               | deg   | 右襟翼位置               |
+|  94 | FMC Selected Airspeed                | kts   | FMC 选择空速            |
+|  95 | FMC Selected Altitude                | ft    | FMC 选择高度            |
+|  96 | FMC Selected Mach                    | mach  | FMC 选择马赫数           |
+|  97 | FMC Valid                            |       | FMC 有效              |
+|  98 | G/S Dev Warn - FCC                   |       | 下滑道偏差警告             |
+|  99 | GP Engage - FCC                      |       | 下滑轨迹自动驾驶模式接通        |
+| 100 | Ground Spd                           | kts   | 地速                  |
+| 101 | Groundspeed FMC                      | kts   | FMC 计算地速            |
+| 102 | Groundspeed Disp -L                  | kts   | 左 PFD 显示地速          |
+| 103 | GS Engaged - FCC                     |       | 下滑道自动驾驶模式接通         |
+| 104 | HDG SEL Light - FCC                  |       | 航向选择灯亮              |
+| 105 | HDG SELECT - FCC                     |       | 航向选择自动驾驶模式接通        |
+| 106 | Heading                              | deg   | 磁航向                 |
+| 107 | Heading Selected FCC                 | deg   | FCC 选择航向            |
+| 108 | High Speed Buffet Speed              | kts   | 高速抖振速度              |
+| 109 | Hyd Oil Press - A                    | psi   | A 系统液压压力            |
+| 110 | Hyd Oil Press - B                    | psi   | B 系统液压压力            |
+| 111 | Hyd Oil Qty - A                      | %     | A 系统液压油量            |
+| 112 | Hyd Oil Qty - B                      | %     | B 系统液压油量            |
+| 113 | Hydraulic Oil Pressure Standby       | psi   | 备用液压压力              |
+| 114 | Hydraulic System A ELEC              |       | A 液压系统电动泵           |
+| 115 | Hydraulic System A Eng 1             |       | A 液压系统发动机泵          |
+| 116 | Hydraulic System B ELEC              |       | B 液压系统电动泵           |
+| 117 | Hydraulic System B Eng 2             |       | B 液压系统发动机泵          |
+| 118 | Hydraulic System Standby             |       | 备用液压系统接通            |
+| 119 | IAS Display - FCC                    |       | 指示空速显示              |
+| 120 | LNAV Engaged - FCC                   |       | LNAV 自动驾驶模式接通       |
+| 121 | LNAV Light - FCC                     |       | LNAV 灯亮             |
+| 122 | LOC Engaged - FCC                    |       | 航向道自动驾驶模式接通         |
+| 123 | LOCAL LIMITED MASTER FCC-L           |       | FCC 左主控             |
+| 124 | LOCAL LIMITED MASTER FCC-R           |       | FCC 右主控             |
+| 125 | LVL Change Light - FCC               |       | 高度层改变自动驾驶模式灯亮       |
+| 126 | MACH Trim Servo Brake Status - FCC-L |       | 马赫配平伺服状态            |
+| 127 | N1 Light - FCC                       |       | N1 灯亮               |
+| 128 | N1 Limit Mode Cmd - FCC              |       | N1 限制自动油门模式接通       |
+| 129 | Pitch Angle                          | deg   | 飞机俯仰角               |
+| 130 | Roll Angle                           | deg   | 飞机横滚角               |
+| 131 | Roll Rate                            | deg/s | 飞机横滚角速度             |
+| 132 | Rudder                               | deg   | 方向舵位置               |
+| 133 | Rudder Ped Pos                       | deg   | 方向舵脚蹬位置             |
+| 134 | Rudder Pos- LVDT DEMOD-STBY PCU      | deg   | 方向舵备用 PCU 的 LVDT 位置 |
+| 135 | Rudder Servo Cmd-STBY PCU            | deg   | 方向舵备用 PCU 伺服指令      |
+| 136 | Selected Airspeed FCC                | kts   | FCC 选择空速            |
+| 137 | Selected Altitude FCC                | ft    | FCC 选择高度            |
+| 138 | Selected Course Foreign FCC          | deg   | 非本地 FCC 选择航道        |
+| 139 | Selected Course Local FCC            | deg   | 本地 FCC 选择航道         |
+| 140 | Selected Mach FCC                    | mach  | FCC 选择马赫数           |
+| 141 | Selected Vertical Speed FCC          | fpm   | FCC 选择垂直速度          |
+| 142 | Single Channel - FCC                 |       | 单通道自动驾驶             |
+| 143 | SPD Light On - FCC                   |       | 速度灯亮                |
+| 144 | SPEED INTERVENTION ACTIVE - FCC      |       | 速度干预激活              |
+| 145 | TOGA Engaged - FCC                   |       | 自动油门 TOGA 模式接通      |
+| 146 | Track Angle True FMC                 | deg   | 真航迹角                |
+| 147 | VISUAL ALTITUDE ALERT - FCC          |       | 目视高度警告激活            |
+| 148 | VNAV Light On - FCC                  |       | VNAV 灯亮             |
+| 149 | VNAV PATH Engaged - FCC              |       | VNAV PATH 自动驾驶模式接通  |
+| 150 | VNAV SPD Engaged - FCC               |       | VNAV SPD 自动驾驶模式接通   |
+| 151 | Wind Direction True -FMC             | deg   | 风向                  |
+| 152 | Wind Speed -FMC                      | kts   | 风速                  |
+| 153 | Yaw Rate                             | deg/s | 飞机偏航角速度             |
+
+### 注释
+
+1. 本 FDR 记录的是**压力高度**，其基于标准高度表设定值 **29.92 英寸汞柱（in Hg）**。FDR 图表及表格数据中呈现的压力高度信息，未根据事件发生时的当地高度表设定进行修正。
+
+2. 表 B-1 中单位栏为空的参数为**离散量**。离散量通常是一个 1 位参数，状态要么为 0，要么为 1；每个状态对每个参数都有唯一的定义。
+
+## 表 B-2：单位和缩写
+
+| 单位/缩写 | 中文说明          |
+| ----- | ------------- |
+| Alt   | 高度            |
+| AP    | 自动驾驶          |
+| APU   | 辅助动力装置        |
+| AT    | 自动油门          |
+| Baro  | 气压式           |
+| CWS   | 驾驶盘操纵 / 控制盘操纵 |
+| deg   | 度             |
+| degC  | 摄氏度           |
+| FCC   | 飞行控制计算机       |
+| FMC   | 飞行管理计算机       |
+| fpm   | 英尺/分钟         |
+| ft    | 英尺            |
+| kts   | 节             |
+| lb    | 磅             |
+| LVDT  | 线性可变差动变压器     |
+| MCP   | 模式控制面板        |
+| PCU   | 动力控制组件        |
+| PFD   | 主飞行显示器        |
+| pph   | 磅/小时          |
+| psi   | 磅/平方英寸        |
+| qt    | 夸脱            |
+| RPM   | 每分钟转数         |
+| s     | 秒             |
+| SMYDC | 失速管理与偏航阻尼计算机  |
+
