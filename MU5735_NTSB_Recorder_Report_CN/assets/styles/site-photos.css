@@ -1,0 +1,95 @@
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: .85rem;
+  margin: 1rem 0 1.5rem;
+}
+
+.photo-card {
+  display: block;
+  overflow: hidden;
+  border: 1px solid #dce1ea;
+  border-radius: 8px;
+  background: #fff;
+  color: #344054;
+  text-decoration: none;
+  transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
+}
+
+.photo-card:hover {
+  transform: translateY(-2px);
+  border-color: #b8c2d2;
+  box-shadow: 0 8px 22px rgba(15, 23, 42, .09);
+}
+
+.photo-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: #f2f4f7;
+}
+
+.photo-card span {
+  display: block;
+  padding: .48rem .6rem;
+  font-size: .78rem;
+  color: #667085;
+}
+
+.photo-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  place-items: center;
+  padding: 2rem;
+  background: rgba(15, 23, 42, .88);
+}
+
+.photo-lightbox[hidden] {
+  display: none;
+}
+
+.photo-lightbox img {
+  max-width: min(100%, 1200px);
+  max-height: calc(100vh - 7rem);
+  object-fit: contain;
+  background: #fff;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, .36);
+}
+
+.photo-lightbox-caption {
+  margin-top: .8rem;
+  color: #eef2f7;
+  font-size: .9rem;
+}
+
+.photo-lightbox-close {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  width: 2.4rem;
+  height: 2.4rem;
+  border: 1px solid rgba(255, 255, 255, .35);
+  border-radius: 50%;
+  background: rgba(15, 23, 42, .55);
+  color: #fff;
+  cursor: pointer;
+  font: 1.6rem/1 system-ui, sans-serif;
+}
+
+.photo-lightbox-close:hover {
+  background: rgba(15, 23, 42, .85);
+}
+
+@media (max-width: 640px) {
+  .photo-gallery {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+
+  .photo-lightbox {
+    padding: 1rem;
+  }
+}
