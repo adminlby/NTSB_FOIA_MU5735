@@ -27,7 +27,7 @@ Links:
 - Internet Archive mirror: https://web.archive.org/web/20260502141354/https://securefoia.ntsb.gov/app/AddAttachment.aspx?docid=66&ispaldoc=F
 - Source discussion: https://github.com/wrongly-cuddly-obsession/NTSB_FOIA_MU5735/issues/14
 
-## Third-party visualization projects
+## Third-party projects
 
 The following community projects are unofficial simulations or visual references based on public materials. They do not represent findings by NTSB, CAAC, or this repository.
 
@@ -67,7 +67,7 @@ NTSB 已在 FOIA Reading Room 公开发布与本仓库相关的资料包：
 - Internet Archive 备份：https://web.archive.org/web/20260502141354/https://securefoia.ntsb.gov/app/AddAttachment.aspx?docid=66&ispaldoc=F
 - GitHub issue #14 讨论来源：https://github.com/wrongly-cuddly-obsession/NTSB_FOIA_MU5735/issues/14
 
-## 第三方可视化项目
+## 第三方项目
 
 以下项目为社区成员基于公开资料制作的非官方模拟或三维重建，仅作直观参考，不代表 NTSB、CAAC 或本仓库的调查结论。
 
