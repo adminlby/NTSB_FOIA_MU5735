@@ -12,7 +12,9 @@ theme:
   features:
     - navigation.instant
     - navigation.sections
+    - navigation.expand
     - navigation.top
+    - toc.integrate
     - search.highlight
     - search.suggest
 
@@ -31,4 +33,9 @@ markdown_extensions:
 
 nav:
   - 首页: index.md
-  - 中文译文: MU5735_NTSB_Recorder_Report_Chinese.md
+  - 资料与分析:
+      - NTSB 公开发布资料: ntsb-release.md
+      - 事故时间线与数据局限: timeline-data-limits.md
+      - "Issue #9 操纵输入讨论汇总": issue-9-control-inputs.md
+      - 第三方可视化项目: third-party-visualizations.md
+  - NTSB 记录器报告中文译文: MU5735_NTSB_Recorder_Report_Chinese.md
