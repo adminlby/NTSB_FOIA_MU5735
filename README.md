@@ -78,3 +78,5 @@ NTSB 已在 FOIA Reading Room 公开发布与本仓库相关的资料包：
   项目仓库：https://github.com/djzoom/MU5735
 
 来源：https://github.com/wrongly-cuddly-obsession/NTSB_FOIA_MU5735/issues/13
+## FAA FOIA 公开记录
+[FAA_MU5735_Records.pdf](FAA_MU5735_Records.pdf)：美国联邦航空管理局依据 FOIA 公开的 MU5735 相关记录，共 16 页，包含机构间通信及 Aireon ALERT 卫星 ADS-B 轨迹报告。
